@@ -57,5 +57,3 @@ append l a = prim_recL (\a' _ t -> cons a' t) (cons a nil) l
 append' l a = l cons (cons a nil)
 catenate l r = prim_recL (\a _ t -> cons a t) r l
 catenate' l r = l cons r
-length = prim_recL (\_ _ a -> succ a) zero
-reverse = prim_recL (\a _ t -> append t a) nil
