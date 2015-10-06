@@ -80,19 +80,23 @@ main = fmap (\_ -> ()) $ runTestTT $ test
   [ gcd' 1 1 ~?= 1
   , gcd' 3 1 ~?= 1
   , gcd' 6 2 ~?= 2
-  , gcd' (-30) (-70) ~?= (-10)
+  , gcd' (-405) 105 ~?= 15
+  , gcd' (-30) (-70) ~?= 10
   ] ++ label "minp"
   [ minp ((== 0) . (`mod` 1)) ~?= 0
   , minp (\x -> even x && x > 0) ~?= 2
-  , minp (\x -> (x `mod` (-39) == 0) && (x `mod` 11 == 0)) ~?= (-429)
+  , minp (\x -> (x < 0) && (x `mod` (-39) == 0) && (x `mod` 11 == 0)) ~?= (-429)
   , minp (< 0) ~?= (-1)
   ] ++ label "doubleFact"
   [ doubleFact 7 ~?= 105
   , doubleFact 8 ~?= 384
   ] ++ label "seqA"
   [ seqA 0 ~?= 1
-  , seqA 10 ~?= 878
-  , seqA 23 ~?= 7190235
+  , seqA 1 ~?= 2
+  , seqA 2 ~?= 3
+  , seqA 10 ~?= -6
+  , seqA 23 ~?= 279
+  , seqA 301 == 1276538859311178639666612897162414
   ] ++ label "sgn"
   [ sgn 0 ~?= 0
   , sgn 42 ~?= 1
