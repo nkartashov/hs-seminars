@@ -1,4 +1,5 @@
 {-# LANGUAGE ScopedTypeVariables #-}
+module HW03P3 where
 import Prelude hiding (lookup)
 import Test.HUnit
 import qualified Data.List as L
@@ -52,7 +53,7 @@ instance Eq (TreeMap k v) where
 instance Eq (ListMap k v) where
     (==) = undefined
 
--- 3. Написать instance Functor для ListMap k и ArrMap k. (0.5 баллa)
+-- 5. Написать instance Functor для ListMap k и ArrMap k. (0.5 баллa)
 
 instance Functor (ListMap k) where
     fmap = undefined

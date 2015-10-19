@@ -1,9 +1,10 @@
+module HW03P2 where
 import qualified Data.Map as M
 import Prelude hiding (lookup)
 import Test.HUnit
 
 ------------------------------------------------------------------------------
--- 1. Реализуйте функции для работы с комплекснми числами.
+-- 1. Реализуйте функции для работы с комплекснми числами. (1 балл)
 
 data Complex = Complex { real :: Double, im :: Double } deriving (Show, Eq)
 
@@ -43,7 +44,7 @@ testsComplex =
     ]
 
 ------------------------------------------------------------------------------
--- 2
+-- 2 (1.5 балла)
 
 data Tree a = Node { value :: a, children :: [Tree a] }
 
@@ -101,7 +102,7 @@ width = undefined
     ])
 
 ------------------------------------------------------------------------------
--- 3
+-- 3 (2 балла)
 
 data Value = I Int | B Bool deriving (Eq, Show)
 data BinOp = Plus | Mul | Minus | Less | Greater | Equals
